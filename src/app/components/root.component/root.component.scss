@@ -1,7 +1,23 @@
+@import '../../styles/colors';
+
 :host {
   width: 100%;
   min-height: 100%;
   min-width: 400px;
   display: flex;
+  flex-direction: column;
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+}
+
+main {
+  padding: 25px 40px;
+  display: flex;
+  background: $white_grey;
+  flex: 1;
   flex-direction: column;
 }

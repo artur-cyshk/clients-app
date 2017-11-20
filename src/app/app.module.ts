@@ -6,13 +6,22 @@ import { HttpClientModule } from '@angular/common/http';
 import { MyDatePickerModule } from 'mydatepicker';
 
 import {
-  RootComponent
+  RootComponent,
+  HeaderComponent,
+  SpinnerComponent
 } from './components';
 
 
 @NgModule({
   declarations: [
-    RootComponent
+    RootComponent,
+    HeaderComponent,
+    ClientsComponent,
+    ClientDialogComponent,
+    SpinnerComponent
+  ],
+  entryComponents: [
+    ClientDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +31,6 @@ import {
     HttpClientModule,
     MyDatePickerModule
   ],
-  providers: [],
   bootstrap: [RootComponent]
 })
 export class AppModule { }

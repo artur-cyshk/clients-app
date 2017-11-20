@@ -1,0 +1,87 @@
+@import './colors';
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body * {
+	box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+button {
+
+  &.icon-button {
+    background: transparent;
+    border: 0;
+    outline: none;
+    transition: 0.2s linear all;
+    color: $grey;
+    font-size: 18px;
+    cursor: pointer;
+
+    &:hover, &:active {
+      color: $black;
+    }
+
+    &[disabled] {
+      color: $grey;
+      cursor: default;
+    }
+  }
+
+  &.blue {
+    background: $dark_blue;
+    padding: 0 17px;
+    height: 37px;
+    text-transform: uppercase;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.2s linear all;
+    border: 1px solid transparent;
+    color: $white;
+
+    &:hover {
+      background: darken($dark_blue,5%);
+    }
+
+    &:active {
+      background: darken($dark_blue,15%);
+      border-color: $dark_blue;
+    }
+
+    &[disabled] {
+      cursor: default;
+      border-color: transparent;
+      background: $light_blue;
+    }
+  }
+}
+
+.mydp {
+  & > .selectiongroup {
+
+    & > .selection {
+      color: $dark_blue;
+
+      &::placeholder {
+        color: $thin_grey;
+      }
+    }
+  }
+}
+
+.blurred {
+  filter: blur(5px);
+}
