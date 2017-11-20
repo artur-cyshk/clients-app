@@ -1,0 +1,39 @@
+<div (click)="close()" class="dialog-wrapper" *ngIf="dialog.visible">
+  <div class="dialog" (click)="$event.stopPropagation()">
+    <header>
+      <span>Client Info</span>
+      <button title="close" class="icon-button" (click)="close()">
+        <i class="fa fa-times"></i>
+      </button>
+    </header>
+    <main>
+      <form [formGroup]="clientForm">
+        <div class="form-element">
+          <label for="name">Name *</label>
+          <input id="name" placeholder="Ex. Joe Bowl" formControlName="name" required>
+          <span class="error" *ngIf="clientForm.controls.name.dirty">
+            <span *ngIf="clientForm.controls.name.hasError('required')">Name is required</span>
+          </span>
+        </div>
+        <div class="form-element">
+          <label for="phone">Phone Number *</label>
+          <input id="phone" placeholder="Ex. 555-555-5555" formControlName="phone" required>
+          <span class="error" *ngIf="clientForm.controls.phone.dirty">
+            <span *ngIf="clientForm.controls.phone.hasError('required')">Phone is required</span>
+            <span *ngIf="clientForm.controls.phone.hasError('pattern')">Available format - xxx-xxx-xxxx</span>
+          </span>
+        </div>
+        <div class="form-element">
+          <label for="birthday">Birthday *</label>
+          <my-date-picker placeholder="Select Date" [options]="datepickerOptions" id="birthday" formControlName="birthday" required></my-date-picker>
+          <span class="error" *ngIf="clientForm.controls.birthday.dirty">
+            <span *ngIf="clientForm.controls.birthday.hasError('required')">Birthday is required</span>
+          </span>
+        </div>
+        <button [disabled]="clientForm.invalid" (click)="save(clientForm)" class="blue">
+          Save
+        </button>
+      </form>
+    </main>
+  </div>
+</div>

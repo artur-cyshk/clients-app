@@ -1,0 +1,84 @@
+@import '../../styles/colors';
+
+.dialog-wrapper {
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+
+  & > .dialog {
+    width: 350px;
+    min-height: 390px;
+    max-height: 500px;
+    border-radius: 1px;
+    box-shadow: 0 0 15px rgba($black, 0.1);
+    background: $white;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+  }
+}
+
+header {
+  display: flex;
+  height: 60px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid $dark_white;
+  padding: 0 15px;
+}
+
+main {
+  display: flex;
+  flex: 1;
+
+  & > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex: 1;
+    padding: 20px 15px;
+
+    & > .form-element {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      color: $thin_grey;
+
+      .error {
+        color: $red;
+        font-size: 12px;
+
+        & > span:first-child {
+          margin-top: 5px;
+        }
+      }
+
+      & > label {
+        margin-bottom: 10px;
+      }
+
+      & > input {
+        height: 34px;
+        border-radius: 3px;
+        outline: none;
+        padding: 0 10px;
+        border: 1px solid $light_grey;
+        color: $grey;
+
+        &.ng-dirty.ng-invalid {
+          border-color: $red;
+        }
+
+        &::placeholder {
+          color: $thin_grey;
+        }
+      }
+    }
+  }
+}

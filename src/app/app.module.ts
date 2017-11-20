@@ -8,8 +8,18 @@ import { MyDatePickerModule } from 'mydatepicker';
 import {
   RootComponent,
   HeaderComponent,
+  ClientsComponent,
+  ClientDialogComponent,
   SpinnerComponent
 } from './components';
+
+import {
+  HttpService,
+  ClientService,
+  DialogService,
+  DateService,
+  HelperService
+} from './services';
 
 
 @NgModule({
@@ -30,6 +40,13 @@ import {
     ReactiveFormsModule,
     HttpClientModule,
     MyDatePickerModule
+  ],
+  providers: [
+    HttpService,
+    ClientService,
+    DialogService,
+    DateService,
+    HelperService
   ],
   bootstrap: [RootComponent]
 })

@@ -1,0 +1,42 @@
+<header>
+  <span class="title">
+    Clients
+  </span>
+  <button (click)="addNewClient()" class="blue">
+    + Add Client
+  </button>
+</header>
+<table>
+  <thead>
+    <tr>
+      <td *ngFor="let header of headers">
+        {{header}}
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let client of clientService.observableList | async">
+      <td>
+        <span [title]="client.name">{{client.name}}</span>
+      </td>
+      <td>
+        <span [title]="client.phone">{{client.phone}}</span>
+      </td>
+      <td>
+        <span [title]="client.birthday">{{client.birthday}}</span>
+      </td>
+      <td>
+        <button title="edit" (click)="editClient(client)" class="icon-button">
+          <i class="fa fa-pencil"></i>
+        </button>
+      </td>
+    </tr>
+    <tr *ngIf="(clientService.observableList | async).length === 0 && !loadingState.isLoading">
+      <td class="no-clients" colspan="4">There are no clients.</td>
+    </tr>
+  </tbody>
+</table>
+<div class="loading" *ngIf="loadingState.isLoading">
+    <span>{{loadingState.info}}</span>
+    <app-spinner></app-spinner>
+</div>
