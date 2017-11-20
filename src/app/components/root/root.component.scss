@@ -1,4 +1,4 @@
-@import '../../styles/colors';
+@import '../../shared/styles/colors';
 
 :host {
   width: 100%;
@@ -15,9 +15,9 @@
 }
 
 main {
-  padding: 25px 40px;
   display: flex;
-  background: $white_grey;
   flex: 1;
   flex-direction: column;
+  padding: 25px 40px;
+  background: $white_grey;
 }

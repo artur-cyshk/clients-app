@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ClientService, DialogService } from '../../services';
-import { Client, Loading } from '../../models';
+import { ClientService, DialogService } from '../../shared/services';
+import { Client, Loading } from '../../shared/models';
 
 
 @Component({

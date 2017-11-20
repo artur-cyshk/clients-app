@@ -1,16 +1,16 @@
 @import './colors';
 
 body, html {
+  height: 100%;
   margin: 0;
   padding: 0;
-  height: 100%;
 }
 
 body * {
-	box-sizing: border-box;
   padding: 0;
   margin: 0;
   font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
 }
 
 ul {
@@ -22,43 +22,43 @@ ul {
 button {
 
   &.icon-button {
-    background: transparent;
-    border: 0;
     outline: none;
-    transition: 0.2s linear all;
-    color: $grey;
-    font-size: 18px;
     cursor: pointer;
+    font-size: 18px;
+    color: $grey;
+    border: 0;
+    background: transparent;
+    transition: 0.2s linear all;
 
     &:hover, &:active {
       color: $black;
     }
 
     &[disabled] {
-      color: $grey;
       cursor: default;
+      color: $grey;
     }
   }
 
   &.blue {
-    background: $dark_blue;
-    padding: 0 17px;
     height: 37px;
-    text-transform: uppercase;
+    padding: 0 17px;
     outline: none;
     cursor: pointer;
     font-size: 16px;
-    transition: 0.2s linear all;
-    border: 1px solid transparent;
+    text-transform: uppercase;
     color: $white;
+    border: 1px solid transparent;
+    background: $dark_blue;
+    transition: 0.2s linear all;
 
     &:hover {
       background: darken($dark_blue,5%);
     }
 
     &:active {
-      background: darken($dark_blue,15%);
       border-color: $dark_blue;
+      background: darken($dark_blue,15%);
     }
 
     &[disabled] {

@@ -1,27 +1,22 @@
 # ClientsApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.2.
+This is simple application where user can get, add and edit clients.
 
-## Development server
+To run this application:
+Install Docker, navigate to main folder and run this in command line:
+$ docker build -t contacts backend && docker run —rm -p 5000:5000 contacts 
+I added one line to python file, which add CORS to server. That's why you need to use my docker configuration.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+If the server successfully listens for requests:
 
-## Code scaffolding
+2) There are three ways to start application:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
+1) Development server.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
+2) Tests.
+Run `ng test` to execute the unit tests.
+3) Build.
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Important Note
+On backend there is no endpoint for editing contacts, but on the design it's described. That's why i have done edit locally, without saving.

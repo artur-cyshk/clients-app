@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { DialogService, DateService } from '../../services';
-import { Client } from '../../models';
+import { DialogService, DateService } from '../../shared/services';
+import { Client } from '../../shared/models';
 
 
 @Component({
@@ -11,9 +11,9 @@ import { Client } from '../../models';
 })
 export class ClientDialogComponent implements OnInit {
 
-  dialog: {visible: boolean, config?: {data: any, onClose: any}};
   private clientForm: FormGroup;
-  private datepickerOptions = {
+  dialog: {visible: boolean, config?: {data: any, onClose: any}};
+  datepickerOptions = {
     dateFormat: 'mm/dd/yyyy',
     editableDateField: false
   };

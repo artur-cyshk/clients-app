@@ -1,9 +1,9 @@
-@import '../../styles/colors';
+@import '../../shared/styles/colors';
 
 :host {
   display: flex;
-  flex: 1;
   flex-direction: column;
+  flex: 1;
 }
 
 table {
@@ -17,12 +17,12 @@ table {
 
   th, td {
     padding: 15px;
-    text-align: left;
-    border-bottom: 1px solid $dark_white;
-    color: $grey;
-    font-size: 13px;
     overflow: hidden;
     text-overflow: ellipsis;
+    text-align: left;
+    font-size: 13px;
+    color: $grey;
+    border-bottom: 1px solid $dark_white;
 
     &:last-child {
       text-align: right;
@@ -55,6 +55,6 @@ header {
   justify-content: center;
   font-size: 12px;
   font-weight: 300;
-  color: $grey;
   text-transform: uppercase;
+  color: $grey;
 }

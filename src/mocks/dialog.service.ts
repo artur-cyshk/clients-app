@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Observable } from 'rxjs/Observable';
-import { Dialog } from '../models';
+import { Dialog } from '../app/shared/models';
 
-@Injectable()
-export class DialogService {
+
+export class MockDialogService {
 
   private dialogDataSubject: BehaviorSubject<Dialog> = new BehaviorSubject({
     visible: false

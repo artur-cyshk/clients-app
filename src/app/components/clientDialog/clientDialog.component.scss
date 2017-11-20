@@ -1,4 +1,4 @@
-@import '../../styles/colors';
+@import '../../shared/styles/colors';
 
 .dialog-wrapper {
   position: fixed;
@@ -13,23 +13,23 @@
     width: 350px;
     min-height: 390px;
     max-height: 500px;
-    border-radius: 1px;
-    box-shadow: 0 0 15px rgba($black, 0.1);
-    background: $white;
     display: flex;
     flex-direction: column;
     margin: auto;
+    border-radius: 1px;
+    box-shadow: 0 0 15px rgba($black, 0.1);
+    background: $white;
   }
 }
 
 header {
-  display: flex;
   height: 60px;
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid $dark_white;
   padding: 0 15px;
+  border-bottom: 1px solid $dark_white;
 }
 
 main {
@@ -51,12 +51,9 @@ main {
       color: $thin_grey;
 
       .error {
-        color: $red;
+        margin-top: 2px;
         font-size: 12px;
-
-        & > span:first-child {
-          margin-top: 5px;
-        }
+        color: $red;
       }
 
       & > label {
@@ -65,11 +62,11 @@ main {
 
       & > input {
         height: 34px;
+        padding: 0 10px;
         border-radius: 3px;
         outline: none;
-        padding: 0 10px;
-        border: 1px solid $light_grey;
         color: $grey;
+        border: 1px solid $light_grey;
 
         &.ng-dirty.ng-invalid {
           border-color: $red;

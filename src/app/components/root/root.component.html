@@ -1,7 +1,7 @@
 <div [ngClass]="{'blurred': (dialogService.dialogData | async).visible}">
   <app-header></app-header>
   <main>
-    <app-clients></app-clients>
+    <router-outlet></router-outlet>
   </main>
 </div>
 <app-client-dialog></app-client-dialog>

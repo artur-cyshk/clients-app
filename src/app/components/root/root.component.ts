@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { DialogService } from '../../services';
+import { DialogService } from '../../shared/services';
+
 
 @Component({
   selector: 'app-root',

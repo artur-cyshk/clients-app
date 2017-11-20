@@ -11,14 +11,14 @@
         <div class="form-element">
           <label for="name">Name *</label>
           <input id="name" placeholder="Ex. Joe Bowl" formControlName="name" required>
-          <span class="error" *ngIf="clientForm.controls.name.dirty">
+          <span class="error" *ngIf="clientForm.controls.name.dirty && clientForm.controls.name.invalid">
             <span *ngIf="clientForm.controls.name.hasError('required')">Name is required</span>
           </span>
         </div>
         <div class="form-element">
           <label for="phone">Phone Number *</label>
           <input id="phone" placeholder="Ex. 555-555-5555" formControlName="phone" required>
-          <span class="error" *ngIf="clientForm.controls.phone.dirty">
+          <span class="error" *ngIf="clientForm.controls.phone.dirty && clientForm.controls.phone.invalid">
             <span *ngIf="clientForm.controls.phone.hasError('required')">Phone is required</span>
             <span *ngIf="clientForm.controls.phone.hasError('pattern')">Available format - xxx-xxx-xxxx</span>
           </span>
@@ -26,11 +26,11 @@
         <div class="form-element">
           <label for="birthday">Birthday *</label>
           <my-date-picker placeholder="Select Date" [options]="datepickerOptions" id="birthday" formControlName="birthday" required></my-date-picker>
-          <span class="error" *ngIf="clientForm.controls.birthday.dirty">
+          <span class="error" *ngIf="clientForm.controls.birthday.dirty && clientForm.controls.birthday.invalid">
             <span *ngIf="clientForm.controls.birthday.hasError('required')">Birthday is required</span>
           </span>
         </div>
-        <button [disabled]="clientForm.invalid" (click)="save(clientForm)" class="blue">
+        <button [disabled]="clientForm.invalid || clientForm.pristine" (click)="save(clientForm)" class="blue">
           Save
         </button>
       </form>
