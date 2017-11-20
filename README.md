@@ -8,7 +8,7 @@ To run this application you need to do the following:
 
    - Install Docker, navigate to main folder and run this command in command line:
 
-     $ docker build -t contacts backend && docker run —rm -p 5000:5000 contacts 
+     $ docker build -t contacts backend && docker run --rm -p 5000:5000 contacts 
 
      *I added one line to the python file that adds CORS to server. That's why you should use my docker configuration.*
 
